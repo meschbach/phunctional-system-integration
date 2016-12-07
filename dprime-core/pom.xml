@@ -1,0 +1,117 @@
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Meta project -->
+    <groupId>com.meschbach.psi.examples</groupId>
+    <artifactId>dprime-core</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0-SNAPSHOT</version>
+
+    <!--
+        Especially engineered for human consumption
+     -->
+    <name>dprime-core</name>
+    <description>
+        This module contains common code between the clients and the servers;
+        only the best may sit at the Mad Hatter's Table.  SWITCH!
+    </description>
+    <url>http://psi.meschbach.com/</url>
+
+    <!--
+        Developer
+    -->
+    <developers>
+        <developer>
+            <id>meschbach</id>
+            <email>meschbach@gmail.com</email>
+            <name>Mark Eschbach</name>
+            <url>http://meschbach.com/</url>
+            <timezone>-8</timezone><!-- California Standard Time -->
+            <organization>Mark Eschbach</organization><!-- :-) -->
+            <roles>
+                <role>Instigator</role>
+                <role>Project Manager</role>
+                <role>Architect</role>
+                <role>Code Monkey</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <organization>
+        <name>Mark Eschbach</name>
+        <url>http://meschbach.com</url>
+    </organization>
+
+    <!--
+        Licensing
+    -->
+    <licenses>
+        <license>
+            <name>Apache 2</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+            <comments>This project is copyright 2010-2011 by Mark Eschbach and the usage of this software granted under the Apache License, Vesrion 2.0</comments>
+        </license>
+    </licenses>
+
+    <!--
+        General Configuration properties
+    -->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <!--
+        Depedency management
+    -->
+    <dependencies>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>5.14.6</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <!--
+    
+    -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.0.2</version>
+                <configuration>
+                    <source>1.5</source>
+                    <target>1.5</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.7</version>
+                <configuration>
+                    <includes>
+                        <include>**/*Tests.java</include>
+                    </includes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>meschbach.com-artifactory</id>
+            <name>meschbach.com-artifactory</name>
+            <url>http://artifactory.meschbach.com:8080/artifactory/libs-snapshot-local</url>
+        </snapshotRepository>
+        <repository>
+            <id>meschbach.com-oss</id>
+            <name>meschbach.com-oss</name>
+            <url>http://artifactory.meschbach.com/cgi-bin/deployer-oss</url>
+        </repository>
+    </distributionManagement>
+</project>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <!-- PSI POM Standard 03/06/2011 -->
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.meschbach.psi</groupId>
+        <artifactId>psi-build</artifactId>
+        <version>2.5-SNAPSHOT</version>
+    </parent>
+
+    <!-- Artifact Definition -->
+    <groupId>com.meschbach.psi</groupId>
+    <artifactId>salutator</artifactId>
+    <version>2.5-SNAPSHOT</version>
+    <packaging>war</packaging>
+
+    <!-- Artifact Description -->
+    <name>Salutator Webapp</name>
+    <description>Example JAXRS application used for demonstrating PSI</description>
+    <url>http://psi.meschbch.com/</url>
+
+    <!-- Dependencies & Build -->
+    <dependencies>
+        <!-- PSI -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>jsp-api</artifactId>
+            <version>2.1</version>
+            <scope>provided</scope>
+        </dependency>
+	<!-- REST -->
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-frontend-jaxrs</artifactId>
+            <version>2.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-frontend-jaxws</artifactId>
+            <version>2.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-transports-http</artifactId>
+            <version>2.3.1</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>salutator</finalName>
+    </build>
+</project>

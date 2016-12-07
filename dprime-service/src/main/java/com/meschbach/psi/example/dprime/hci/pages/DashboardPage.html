@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <wicket:extend>
+            <h1>DPrime Service</h1>
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Property</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>PrimeKB Implementation</td>
+                            <td><wicket:container wicket:id="pkb_implementation">com.....</wicket:container></td>
+                        </tr>
+                        <tr>
+                            <td>Largest Known Prime</td>
+                            <td><wicket:container wicket:id="pkb_largetKnowPrime">2</wicket:container></td>
+                        </tr>
+                        <tr>
+                            <td>Smallest know prime (should be 2)</td>
+                            <td><wicket:container wicket:id="pkb_smallestKnowPrime">7</wicket:container></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <h2>Attempt to find if a number is prime</h2>
+                <form wicket:id="findPrimeForm">
+                    <p><label>Is Prime?</label><input type="text" wicket:id="prime_query"/></p>
+                    <p><input type="submit" value="Find if prime"/></p>
+                </form>
+            </div>
+            <div>
+                <h3>Work Queue</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Task hash</th>
+                            <th>State</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <td>Task hash</td>
+                            <td>State</td>
+                            <td>Description</td>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr wicket:id="tasks">
+                            <td><wicket:container wicket:id="hash">102030</wicket:container></td>
+                            <td><wicket:container wicket:id="state">Completed</wicket:container></td>
+                            <td><wicket:container wicket:id="description">Description</wicket:container></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </wicket:extend>
+    </body>
+</html>

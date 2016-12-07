@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : beans.xml.xml
+    Created on : February 1, 2011, 11:37 AM
+    Author     : gremlin
+    Description:
+        Purpose of the document follows.
+-->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+">
+
+    <bean class="com.meschbach.psi.examples.dprime.wnode.core.WNode">
+    </bean>
+</beans>

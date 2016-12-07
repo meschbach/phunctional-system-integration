@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <!-- PSI POM Standard 03/06/2011 -->
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.meschbach.psi</groupId>
+        <artifactId>psi-build</artifactId>
+        <version>2.5-SNAPSHOT</version>
+    </parent>
+
+    <!-- Artifact Definition -->
+    <artifactId>psi-core</artifactId>
+    <version>2.5-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <!-- Artifact Description -->
+    <name>PSI Core</name>
+    <description>Phunctional System integration is a utility library to provide a simplified testing harness for
+        automated Web Application testing.
+    </description>
+    <url>http://psi.meschbach.com/</url>
+
+    <!-- Dependencies & Build -->
+    <dependencies>
+        <dependency>
+            <groupId>com.meschbach.cise</groupId>
+            <artifactId>cise-oss</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+</project>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <!-- PSI POM Standard 03/06/2011 -->
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>6</version>
+    </parent>
+
+    <!-- Artifact Definition -->
+    <groupId>com.meschbach.psi</groupId>
+    <artifactId>psi-build</artifactId>
+    <version>2.5-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <!-- Artifact Description -->
+    <name>PSI Build</name>
+    <description>Parent POM for building PSI modules.</description>
+    <url>http://psi.meschbach.com/</url>
+
+    <!-- Modules -->
+    <modules>
+        <module>../cise-oss</module>
+        <module>../echo-webapp</module>
+        <module>../psi</module>
+        <module>../psi-container-compliance</module>
+        <module>../psi-core</module>
+        <module>../psi-jetty6</module>
+        <module>../psi-jetty7</module>
+        <module>../psi-tomcat6</module>
+        <module>../psi-util</module>
+        <module>../salutator</module>
+        <module>../salutator-test</module>
+    </modules>
+
+    <!-- Properties -->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <!-- Developers -->
+    <developers>
+        <developer>
+            <id>meschbach</id>
+            <name>Mark Eschbach</name>
+            <email>meschbach@gmail.com</email>
+            <url>http://meschbach.com/</url>
+            <timezone>-8</timezone>
+            <organization>Mark Eschbach</organization>
+            <roles>
+                <role>Instigator</role>
+                <role>Project Manager</role>
+                <role>Architect</role>
+                <role>Code Monkey</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>mtinoco</id>
+            <name>Mario Tinoco</name>
+            <email>marioandrest@gmail.com</email>
+            <url>http://mariotinoco.com</url>
+            <timezone>-8</timezone>
+            <roles>
+                <role>Build Troll</role>
+                <role>Testing Gnome</role>
+                <role>Hudson Harpy</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <!-- Organization -->
+    <organization>
+        <name>Mark Eschbach</name>
+        <url>http://meschbach.com</url>
+    </organization>
+
+    <!-- Licensing -->
+    <licenses>
+        <license>
+            <name>Apache 2</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+            <comments>This project is copyright 2010-2011 by Mark Eschbach and the usage of this software granted under
+                the Apache License, Vesrion 2.0
+            </comments>
+        </license>
+    </licenses>
+
+    <!-- Dependencies -->
+    <dependencies>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>5.14.6</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>1.8.5</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <!-- Build -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.5</source>
+                    <target>1.5</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <includes>
+                        <include>**/*Test*.java</include>
+                    </includes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>findbugs-maven-plugin</artifactId>
+                <version>2.3.1</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-release-plugin</artifactId>
+                <configuration>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.2</version>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <phase>compile</phase>
+                        <configuration>
+                            <includeTypes>war</includeTypes>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+    </build>
+
+    <!-- Source Code Management -->
+    <scm>
+        <connection>scm:svn:http://phunctional-system-integration.googlecode.com/svn/trunk/</connection>
+        <developerConnection>scm:svn:https://phunctional-system-integration.googlecode.com/svn/trunk/
+        </developerConnection>
+        <url>http://code.google.com/p/phunctional-system-integration/source/browse/</url>
+    </scm>
+
+    <!-- Issue Management -->
+    <issueManagement>
+        <system>Google Code</system>
+        <url>http://code.google.com/p/phunctional-system-integration/issues</url>
+    </issueManagement>
+</project>

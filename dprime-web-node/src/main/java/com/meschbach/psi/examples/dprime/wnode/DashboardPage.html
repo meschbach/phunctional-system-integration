@@ -1,0 +1,44 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+    <head>
+        <title>Dashboard</title>
+    </head>
+    <body>
+    <wicket:extend>
+        <h1>DPrime Web Node</h1>
+        <div>
+            <h2>Node Information</h2>
+            <p>Node name: <span wicket:id="nodeName">Node-Name</span></p>
+        </div>
+        <div>
+            <h2>Task History</h2>
+            <table>
+                <caption>Tasks</caption>
+                <thead>
+                    <tr>
+                        <th>When Issued</th>
+                        <th>Result Returned</th>
+                        <th>Description</th>
+                        <th>Result</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <td>When Issued</td>
+                        <td>Result Returned</td>
+                        <td>Description</td>
+                        <td>Result</td>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    <tr><td>When</td><td>Result</td><td>Descrip</td><td>Result</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </wicket:extend>
+</body>
+</html>
